@@ -2,7 +2,13 @@
 
 > Settle smart. Split sharp.
 
-SplitKar is a modern expense splitting and settlement calculator built with Next.js and TypeScript. It helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+A modern, full-stack expense splitting and settlement calculator built with Next.js and TypeScript. SplitKar helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
 
 ## Features
 
@@ -29,14 +35,16 @@ SplitKar is a modern expense splitting and settlement calculator built with Next
 
 ## Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) 16 + React 19
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) 4
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **PDF Generation**: [pdf-lib](https://pdf-lib.js.org/)
-- **Icons**: [Lucide React](https://lucide.dev/)
+| Category | Technology |
+|----------|------------|
+| Framework | [Next.js](https://nextjs.org/) 16 + [React](https://react.dev/) 19 |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) 4 |
+| UI Components | [shadcn/ui](https://ui.shadcn.com/) |
+| Animations | [Framer Motion](https://www.framer.com/motion/) |
+| State Management | [Zustand](https://github.com/pmndrs/zustand) |
+| PDF Generation | [pdf-lib](https://pdf-lib.js.org/) |
+| Icons | [Lucide React](https://lucide.dev/) |
 
 ## Getting Started
 
@@ -107,7 +115,7 @@ After adding all transactions, click "Calculate Settlement" to see:
 ```
 my-app/
 ├── app/                 # Next.js app router
-│   ├── api/            # API routes
+│   ├── api/            # API routes (parse, settle, generate-pdf)
 │   ├── globals.css     # Global styles
 │   ├── layout.tsx      # Root layout
 │   └── page.tsx        # Home page
@@ -121,19 +129,17 @@ my-app/
 │   └── validation.ts  # Input validation
 ├── store/             # Zustand stores
 ├── types/             # TypeScript types
-└── public/            # Static assets
+├── public/            # Static assets
+└── __tests__/         # Unit tests
 ```
 
 ## API Endpoints
 
-### POST `/api/parse`
-Parse CSV or natural language text into transactions.
-
-### POST `/api/settle`
-Calculate optimal settlements from transaction data.
-
-### POST `/api/generate-pdf`
-Generate a PDF report with transactions and settlements.
+| Endpoint | Description |
+|----------|-------------|
+| `POST /api/parse` | Parse CSV or natural language text into transactions |
+| `POST /api/settle` | Calculate optimal settlements from transaction data |
+| `POST /api/generate-pdf` | Generate a PDF report with transactions and settlements |
 
 ## Testing
 
@@ -161,7 +167,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
