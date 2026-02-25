@@ -1,0 +1,9 @@
+paid_by,amount,description,split_type,participants
+Mohit,500,Horse Riding,equal,"Mohit,Pankaj,Dhruv,Rudra"
+Pankaj,300,Breakfast for everyone,equal,"Mohit,Pankaj,Dhruv,Rudra,Ananya,Vikram"
+Dhruv,1200,Team Dinner,equal,"Pankaj,Dhruv,Rudra,Ananya"
+Rudra,250,Shared cab ride,equal,"Mohit,Rudra,Vikram"
+Ananya,800,Office supplies,equal,"Ananya,Vikram"
+Vikram,600,Weekend trip fuel,equal,"Mohit,Pankaj,Dhruv,Rudra,Ananya,Vikram"
+Mohit,150,Stationery,equal,"Mohit,Pankaj"
+Pankaj,900,Client lunch,equal,"Pankaj,Dhruv,Ananya"
