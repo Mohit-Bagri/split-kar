@@ -560,12 +560,6 @@ export default function Home() {
         onSave={updateTransaction}
       />
 
-      {/* Footer */}
-      <footer className="border-t border-[#2a2a2a] mt-20">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-500">
-          <p>SPLITकर — Built for precision splitting</p>
-        </div>
-      </footer>
     </main>
   );
 }

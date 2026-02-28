@@ -1,9 +1,9 @@
 /**
  * @file app/api/generate-pdf/route.ts
- * @description API route for generating PDF reports with multi-page support
+ * @description API route for generating PDF reports with dark theme
  * @author SplitKar Team
  * @created 2026-02-24
- * @changeMarker [F-002-PDF-001] Fixed PDF formatting, added multi-page support and footer
+ * @changeMarker [F-002-PDF-002] Updated to dark theme with bright text
  */
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -33,7 +33,20 @@ const GeneratePDFRequestSchema = z.object({
   })),
 });
 
-// Helper to format currency (using Rs. instead of ₹ for PDF compatibility)
+// Dark theme color palette
+const COLORS = {
+  background: rgb(0.06, 0.06, 0.08),      // Deep dark background
+  surface: rgb(0.1, 0.1, 0.12),           // Slightly lighter for cards
+  textPrimary: rgb(0.95, 0.95, 0.97),     // Bright white text
+  textSecondary: rgb(0.75, 0.75, 0.77),   // Light gray text
+  textMuted: rgb(0.55, 0.55, 0.57),       // Muted text
+  border: rgb(0.2, 0.2, 0.22),            // Subtle borders
+  gold: rgb(0.96, 0.77, 0.09),            // Gold accent
+  green: rgb(0.4, 0.9, 0.4),              // Bright green for positive
+  red: rgb(1, 0.45, 0.45),                // Bright red for negative
+};
+
+// Helper to format currency
 const formatCurrency = (amount: number): string => {
   return `Rs. ${amount.toFixed(2)}`;
 };
@@ -52,10 +65,10 @@ const drawFooter = (
     start: { x: 50, y: footerY + 15 },
     end: { x: width - 50, y: footerY + 15 },
     thickness: 0.5,
-    color: rgb(0.3, 0.3, 0.3),
+    color: COLORS.border,
   });
   
-  // Footer text - "Made in India by " in gray, name in gold
+  // Footer text
   const prefixText = 'Made in India by ';
   const nameText = 'MOHIT BAGRI';
   
@@ -64,22 +77,19 @@ const drawFooter = (
     y: footerY,
     font,
     size: 8,
-    color: rgb(0.5, 0.5, 0.5),
+    color: COLORS.textMuted,
   });
   
-  // Calculate width of prefix to position the name
   const prefixWidth = font.widthOfTextAtSize(prefixText, 8);
   
-  // Name in gold color (as the clickable link indicator)
   page.drawText(nameText, {
     x: 50 + prefixWidth,
     y: footerY,
     font,
     size: 8,
-    color: rgb(0.96, 0.77, 0.09),
+    color: COLORS.gold,
   });
   
-  // Portfolio URL in gold
   const urlText = 'mohitbagri-portfolio.vercel.app';
   const urlWidth = font.widthOfTextAtSize(urlText, 8);
   page.drawText(urlText, {
@@ -87,7 +97,7 @@ const drawFooter = (
     y: footerY,
     font,
     size: 8,
-    color: rgb(0.96, 0.77, 0.09),
+    color: COLORS.gold,
   });
 };
 
@@ -105,21 +115,40 @@ export async function POST(request: NextRequest) {
     const leftMargin = 50;
     const rightMargin = pageWidth - 50;
     
-    // Create first page
+    // Create first page with dark background
     let page = pdfDoc.addPage([pageWidth, pageHeight]);
+    
+    // Fill background with dark color
+    page.drawRectangle({
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight,
+      color: COLORS.background,
+    });
+    
     let y = pageHeight - 50;
     
-    // Helper to add new page when needed
+    // Helper to add new page with dark background
     const addNewPage = () => {
       drawFooter(page, font, pageWidth, pageHeight);
       page = pdfDoc.addPage([pageWidth, pageHeight]);
+      
+      // Fill background
+      page.drawRectangle({
+        x: 0,
+        y: 0,
+        width: pageWidth,
+        height: pageHeight,
+        color: COLORS.background,
+      });
+      
       y = pageHeight - 50;
       return page;
     };
     
-    // Helper to check if we need a new page
     const checkNewPage = (requiredSpace: number = 50) => {
-      if (y < requiredSpace + 80) { // 80 for footer space
+      if (y < requiredSpace + 80) {
         addNewPage();
       }
     };
@@ -130,7 +159,7 @@ export async function POST(request: NextRequest) {
       y,
       font: boldFont,
       size: 24,
-      color: rgb(0.96, 0.77, 0.09), // Gold color
+      color: COLORS.gold,
     });
     
     y -= 30;
@@ -140,7 +169,7 @@ export async function POST(request: NextRequest) {
       y,
       font,
       size: 12,
-      color: rgb(0.5, 0.5, 0.5),
+      color: COLORS.textMuted,
     });
     
     y -= 40;
@@ -151,7 +180,7 @@ export async function POST(request: NextRequest) {
       y,
       font: boldFont,
       size: 16,
-      color: rgb(0.1, 0.1, 0.1),
+      color: COLORS.textPrimary,
     });
     
     y -= 25;
@@ -163,7 +192,7 @@ export async function POST(request: NextRequest) {
       y,
       font,
       size: 12,
-      color: rgb(0.3, 0.3, 0.3),
+      color: COLORS.textSecondary,
     });
     
     y -= 20;
@@ -173,7 +202,7 @@ export async function POST(request: NextRequest) {
       y,
       font,
       size: 12,
-      color: rgb(0.3, 0.3, 0.3),
+      color: COLORS.textSecondary,
     });
     
     y -= 20;
@@ -183,7 +212,7 @@ export async function POST(request: NextRequest) {
       y,
       font,
       size: 12,
-      color: rgb(0.3, 0.3, 0.3),
+      color: COLORS.textSecondary,
     });
     
     y -= 40;
@@ -197,7 +226,7 @@ export async function POST(request: NextRequest) {
         y,
         font: boldFont,
         size: 16,
-        color: rgb(0.1, 0.1, 0.1),
+        color: COLORS.textPrimary,
       });
       
       y -= 25;
@@ -210,7 +239,7 @@ export async function POST(request: NextRequest) {
           y,
           font,
           size: 11,
-          color: rgb(0.3, 0.3, 0.3),
+          color: COLORS.textSecondary,
         });
         
         page.drawText(formatCurrency(s.amount), {
@@ -218,7 +247,7 @@ export async function POST(request: NextRequest) {
           y,
           font: boldFont,
           size: 11,
-          color: rgb(0.96, 0.77, 0.09),
+          color: COLORS.gold,
         });
         
         y -= 20;
@@ -236,7 +265,7 @@ export async function POST(request: NextRequest) {
         y,
         font: boldFont,
         size: 16,
-        color: rgb(0.1, 0.1, 0.1),
+        color: COLORS.textPrimary,
       });
       
       y -= 25;
@@ -252,7 +281,7 @@ export async function POST(request: NextRequest) {
           y,
           font,
           size: 11,
-          color: rgb(0.3, 0.3, 0.3),
+          color: COLORS.textSecondary,
         });
         
         page.drawText(isPositive ? `gets back ${amountText}` : `owes ${amountText}`, {
@@ -260,7 +289,7 @@ export async function POST(request: NextRequest) {
           y,
           font,
           size: 11,
-          color: isPositive ? rgb(0.2, 0.6, 0.2) : rgb(0.8, 0.3, 0.3),
+          color: isPositive ? COLORS.green : COLORS.red,
         });
         
         y -= 18;
@@ -278,15 +307,15 @@ export async function POST(request: NextRequest) {
         y,
         font: boldFont,
         size: 16,
-        color: rgb(0.1, 0.1, 0.1),
+        color: COLORS.textPrimary,
       });
       
       y -= 25;
       
       // Table header
-      page.drawText('Description', { x: leftMargin, y, font: boldFont, size: 10, color: rgb(0.1, 0.1, 0.1) });
-      page.drawText('Paid By', { x: 220, y, font: boldFont, size: 10, color: rgb(0.1, 0.1, 0.1) });
-      page.drawText('Amount', { x: rightMargin - 80, y, font: boldFont, size: 10, color: rgb(0.1, 0.1, 0.1) });
+      page.drawText('Description', { x: leftMargin, y, font: boldFont, size: 10, color: COLORS.textPrimary });
+      page.drawText('Paid By', { x: 220, y, font: boldFont, size: 10, color: COLORS.textPrimary });
+      page.drawText('Amount', { x: rightMargin - 80, y, font: boldFont, size: 10, color: COLORS.textPrimary });
       
       y -= 15;
       
@@ -295,21 +324,17 @@ export async function POST(request: NextRequest) {
         start: { x: leftMargin, y: y + 10 },
         end: { x: rightMargin, y: y + 10 },
         thickness: 1,
-        color: rgb(0.8, 0.8, 0.8),
+        color: COLORS.border,
       });
       
       y -= 10;
       
-      // All transactions (no limit)
       for (const tx of validated.transactions) {
         checkNewPage(30);
         
-        // Full description (no truncation)
-        const desc = tx.description;
-        
-        page.drawText(desc, { x: leftMargin, y, font, size: 10, color: rgb(0.3, 0.3, 0.3) });
-        page.drawText(tx.paidBy, { x: 220, y, font, size: 10, color: rgb(0.3, 0.3, 0.3) });
-        page.drawText(formatCurrency(tx.amount), { x: rightMargin - 80, y, font, size: 10, color: rgb(0.3, 0.3, 0.3) });
+        page.drawText(tx.description, { x: leftMargin, y, font, size: 10, color: COLORS.textSecondary });
+        page.drawText(tx.paidBy, { x: 220, y, font, size: 10, color: COLORS.textSecondary });
+        page.drawText(formatCurrency(tx.amount), { x: rightMargin - 80, y, font, size: 10, color: COLORS.textSecondary });
         
         y -= 18;
       }
