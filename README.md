@@ -1,59 +1,82 @@
-# SplitKar
+<div align="center">
 
-> Settle smart. Split sharp.
+# 💰 SplitKar
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+### Settle smart. Split sharp.
 
-A modern, full-stack expense splitting and settlement calculator built with Next.js and TypeScript. SplitKar helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
+<p align="center">
+  <a href="https://split-kar-pro.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/🔗_Live_Demo-split--kar--pro.vercel.app-F5C518?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
 
-## Features
+[🚀 **Try it Live**](https://split-kar-pro.vercel.app) • [📂 Repository](https://github.com/mohit-bagri/splitkar) • [🐛 Report Bug](https://github.com/mohit-bagri/splitkar/issues)
 
-- **Multiple Input Methods**
-  - CSV upload with drag-and-drop support
-  - Natural language text parsing
-  - Manual transaction entry
+<img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js" alt="Next.js" />
+<img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" alt="React" />
+<img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss" alt="Tailwind" />
+<img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License" />
 
-- **Flexible Split Options**
-  - Equal split among participants
-  - Percentage-based splits
-  - Fixed amount splits
-  - Share-based splits
+</div>
 
-- **Smart Settlement Algorithm**
-  - Optimized to minimize number of transactions
-  - Handles rounding corrections automatically
-  - Clear visualization of who owes whom
+---
 
-- **Professional Reports**
-  - PDF export with transaction summary
-  - Balance overview
-  - Step-by-step settlement instructions
+## 🔗 Live Demo
 
-## Tech Stack
+**Experience SplitKar in action:** [https://split-kar-pro.vercel.app](https://split-kar-pro.vercel.app)
 
-| Category | Technology |
-|----------|------------|
-| Framework | [Next.js](https://nextjs.org/) 16 + [React](https://react.dev/) 19 |
-| Language | [TypeScript](https://www.typescriptlang.org/) |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) 4 |
-| UI Components | [shadcn/ui](https://ui.shadcn.com/) |
-| Animations | [Framer Motion](https://www.framer.com/motion/) |
-| State Management | [Zustand](https://github.com/pmndrs/zustand) |
-| PDF Generation | [pdf-lib](https://pdf-lib.js.org/) |
-| Icons | [Lucide React](https://lucide.dev/) |
+<div align="center">
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/🔗_Open%20Live%20Demo-split--kar--pro.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://split-kar-pro.vercel.app)
+
+</div>
+
+---
+
+## ✨ What is SplitKar?
+
+**SplitKar** is a modern, full-stack expense splitting and settlement calculator that helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
+
+No more awkward "you owe me" conversations—just upload, split, and settle!
+
+---
+
+## 🚀 Features
+
+| Feature | Description |
+|---------|-------------|
+| 📁 **Multiple Input Methods** | CSV upload with drag-and-drop, natural language text parsing, or manual entry |
+| ⚖️ **Flexible Split Options** | Equal, percentage-based, fixed amount, or share-based splits |
+| 🧠 **Smart Settlement Algorithm** | Optimized to minimize transactions, handles rounding automatically |
+| 📄 **Professional Reports** | PDF export with transaction summary and step-by-step settlements |
+| 🎨 **Beautiful UI** | Dark theme with smooth animations and responsive design |
+| 🔒 **Privacy First** | All calculations happen locally—no data leaves your browser |
+
+---
+
+## 🛠️ Built With
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/shadcn/ui-000000?style=flat-square&logo=shadcnui&logoColor=white" alt="shadcn/ui" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/Zustand-443E38?style=flat-square&logo=zustand&logoColor=white" alt="Zustand" />
+  <img src="https://img.shields.io/badge/pdf--lib-FF6B6B?style=flat-square&logo=pdf&logoColor=white" alt="pdf-lib" />
+</p>
+
+---
+
+## 📦 Installation
 
 ### Prerequisites
-
 - Node.js 18 or higher
 - npm or yarn
 
-### Installation
+### Quick Start
 
 ```bash
 # Clone the repository
@@ -63,9 +86,8 @@ cd splitkar/my-app
 # Install dependencies
 npm install
 
-# Set up environment variables (optional)
+# Set up environment variables (optional - for LLM features)
 cp .env.example .env.local
-# Edit .env.local if you want to enable LLM parsing features
 
 # Start the development server
 npm run dev
@@ -73,11 +95,13 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Usage
+---
 
-### CSV Format
+## 📖 Usage
 
-Upload expenses via CSV file:
+### 📝 CSV Upload
+
+Upload expenses via CSV file with drag-and-drop:
 
 ```csv
 paid_by,amount,description
@@ -94,7 +118,7 @@ Alice,500,Dinner,equal,"Alice,Bob,Charlie"
 Bob,300,Movie tickets,percentage,"Alice:50,Bob:30,Charlie:20"
 ```
 
-### Natural Language
+### 💬 Natural Language
 
 Describe expenses in plain English:
 
@@ -103,59 +127,38 @@ Alice paid 500 for dinner for Alice, Bob and Charlie.
 Bob paid 300 for movie tickets for everyone.
 ```
 
-### Settlement Calculation
+### 🧮 Settlement Calculation
 
-After adding all transactions, click "Calculate Settlement" to see:
+Click **"Calculate Settlement"** to see:
 - Who owes money
 - Who should receive money
 - Minimum transactions needed to settle all debts
 
-## Project Structure
+---
 
-```
-my-app/
-├── app/                 # Next.js app router
-│   ├── api/            # API routes (parse, settle, generate-pdf)
-│   ├── globals.css     # Global styles
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Home page
-├── components/         # React components
-│   ├── features/       # Feature components
-│   └── ui/            # UI components (shadcn)
-├── lib/               # Utility functions
-│   ├── parser.ts      # CSV/text parsing
-│   ├── settlement.ts  # Settlement algorithm
-│   ├── split.ts       # Split calculations
-│   └── validation.ts  # Input validation
-├── store/             # Zustand stores
-├── types/             # TypeScript types
-├── public/            # Static assets
-└── __tests__/         # Unit tests
-```
-
-## API Endpoints
-
-| Endpoint | Description |
-|----------|-------------|
-| `POST /api/parse` | Parse CSV or natural language text into transactions |
-| `POST /api/settle` | Calculate optimal settlements from transaction data |
-| `POST /api/generate-pdf` | Generate a PDF report with transactions and settlements |
-
-## Testing
+## 🧪 Testing
 
 ```bash
 npm test
 ```
 
-## Deployment
+---
 
-The app can be deployed to [Vercel](https://vercel.com) or any platform supporting Next.js:
+## 🚀 Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mohit-bagri/splitkar)
+
+Or build locally:
 
 ```bash
 npm run build
 ```
 
-## Contributing
+---
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -165,15 +168,18 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
+---
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Made in India by [Mohit Bagri](https://github.com/mohit-bagri)
-- Built with modern web technologies and best practices
-
 ---
 
+<div align="center">
+
+**Made in** 🇮🇳 **by** [Mohit Bagri](https://mohitbagri-portfolio.vercel.app)
+
 Built with precision. Designed for clarity.
+
+</div>

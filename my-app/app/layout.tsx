@@ -41,20 +41,17 @@ export default function RootLayout({
         
         {/* Footer */}
         <footer className="border-t border-[#2a2a2a] bg-[#0a0a0a] py-4 px-6">
-          <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-2">
             <p className="text-sm text-gray-500">
               Made in 🇮🇳 with ❤️ by{' '}
               <a
-                href="https://github.com/Mohit-Bagri"
+                href="https://mohitbagri-portfolio.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#F5C518] hover:underline"
               >
                 MOHIT BAGRI
               </a>
-            </p>
-            <p className="text-xs text-gray-600">
-              © {new Date().getFullYear()} SplitKar. All rights reserved.
             </p>
           </div>
         </footer>
