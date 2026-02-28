@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💰 SplitKar
+# 💰 SPLITकर
 
 ### Settle smart. Split sharp.
 
@@ -25,9 +25,9 @@
 
 ---
 
-## ✨ What is SplitKar?
+## ✨ What is SPLITकर?
 
-**SplitKar** is a modern, full-stack expense splitting and settlement calculator that helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
+**SPLITकर** is a modern, full-stack expense splitting and settlement calculator that helps groups track shared expenses and calculates optimal settlements to minimize the number of transactions needed.
 
 No more awkward "you owe me" conversations—just upload, split and settle!
 
@@ -117,14 +117,6 @@ npm test
 
 ---
 
-## 🚀 Deployment
-
-Deploy to [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mohit-bagri/splitkar)
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -133,6 +125,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made in** 🇮🇳 **by** [Mohit Bagri](https://mohitbagri-portfolio.vercel.app)
+Made in 🇮🇳 with ❤️ by [Mohit Bagri](https://mohitbagri-portfolio.vercel.app)
 
 </div>
