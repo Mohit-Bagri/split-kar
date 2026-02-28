@@ -79,8 +79,8 @@ const drawFooter = (
     color: rgb(0.96, 0.77, 0.09),
   });
   
-  // GitHub URL in gold
-  const urlText = 'github.com/Mohit-Bagri';
+  // Portfolio URL in gold
+  const urlText = 'mohitbagri-portfolio.vercel.app';
   const urlWidth = font.widthOfTextAtSize(urlText, 8);
   page.drawText(urlText, {
     x: width - 50 - urlWidth,
