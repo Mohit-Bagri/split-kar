@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "SPLITकर | Smart Expense Splitting",
   description: "Settle smart. Split sharp. A premium expense splitting and settlement engine.",
   keywords: ["expense splitting", "settlement", "bill splitting", "group expenses"],
+  icons: {
+    icon: "/salary.png",
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +54,27 @@ export default function RootLayout({
                 className="text-[#F5C518] hover:underline"
               >
                 MOHIT BAGRI
+              </a>
+            </p>
+            <p className="text-xs text-gray-600 text-center">
+              Favicon:{' '}
+              <a
+                href="https://www.flaticon.com/authors/freepik"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#F5C518] hover:underline"
+              >
+                Freepik
+              </a>{' '}
+              via{' '}
+              <a
+                href="https://www.flaticon.com/free-icons/money"
+                title="money icons"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#F5C518] hover:underline"
+              >
+                Flaticon money icons
               </a>
             </p>
           </div>
