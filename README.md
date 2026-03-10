@@ -56,8 +56,8 @@ No more awkward "you owe me" conversations—just upload, split and settle!
 
 ```bash
 # Clone the repository
-git clone https://github.com/mohit-bagri/splitkar.git
-cd splitkar/my-app
+git clone https://github.com/Mohit-Bagri/split-kar.git
+cd split-kar/my-app
 
 # Install dependencies
 npm install
@@ -119,7 +119,7 @@ npm test
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
