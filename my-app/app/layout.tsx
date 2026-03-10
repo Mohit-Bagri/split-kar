@@ -23,9 +23,6 @@ export const metadata: Metadata = {
   title: "SPLITकर | Smart Expense Splitting",
   description: "Settle smart. Split sharp. A premium expense splitting and settlement engine.",
   keywords: ["expense splitting", "settlement", "bill splitting", "group expenses"],
-  icons: {
-    icon: "/salary.png",
-  },
 };
 
 export default function RootLayout({
